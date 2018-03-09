@@ -1,0 +1,59 @@
+
+<ion-header>
+    <ion-navbar>
+        <ion-title>Online & Mobile Security</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+    <div padding>
+
+      <ion-row>
+        <ion-col>
+          <img class="logo" src="assets/imgs/logo.png" />
+        </ion-col>
+      </ion-row>
+
+      <div class="login-form">
+        <ion-row>
+          <ion-col>
+            <form [formGroup]="loginForm" #formDir="ngForm">
+              <ion-list inset class="no-border">
+                <div class="form-group">
+                  <ion-item>
+                    <ion-label>Username</ion-label>
+                    <ion-input formControlName="usernameFormControl" required class="form-control"  type="email"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Password</ion-label>
+                    <ion-input formControlName="passwordFormControl" required class="form-control" type="password"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label (click)="showFingerPrint()" >Use Touch ID / Face ID</ion-label>
+                      <ion-toggle formControlName="isUseTouchIdFormControl" *ngIf="isShowTouchId" checked="false"></ion-toggle>
+                  </ion-item>
+                </div>
+              </ion-list>
+            </form>
+            
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <button ion-button class="button" [disabled]="!loginForm.valid" (click)="login()">Login</button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+              <div (click)="openRegisterPage()">
+                <span class="create-account-span">Or create a new account.</span>
+              </div>
+            </ion-col>
+          </ion-row>
+          <br />
+        </div>
+
+    </div>
+  </ion-content>

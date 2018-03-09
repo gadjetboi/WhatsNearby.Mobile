@@ -1,17 +1,31 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>WhatsNearby</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-list>
+    <ion-item>
+        Welcome: {{ loggedUser.firstName }}
+    </ion-item>
+    <ion-item>
+      Location: {{ addressLabel }}
+    </ion-item>
+  </ion-list>
+    
+  <ion-row>
+    <ion-col>
+        <button class="button" ion-button round (click)="showCategoryModalPage()">Pick Category</button>
+        <button class="button" ion-button round (click)="refreshCurrentLocation()">Refresh Locaton</button>
+    </ion-col>
+  </ion-row>
+
+  <div #home_map id="home_map" style="height: 75%"></div>
+  
+  <ion-row>
+    <ion-col>
+        <button class="button" ion-button round (click)="navigate()">Navigate</button>
+    </ion-col>
+  </ion-row>
 </ion-content>

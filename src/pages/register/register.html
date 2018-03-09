@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Create Account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-row>
+    <ion-col>
+        <ion-label><h2>As a start, help us know you better</h2></ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      
+      <ion-list inset class="no-border">
+        <form [formGroup]="registerForm" #formDir="ngForm">
+          <div class="form-group">
+            <ion-item>
+              <ion-label>Username / Email</ion-label>
+              <ion-input formControlName="usernameFormControl" required class="form-control"  type="email"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>First Name</ion-label>
+              <ion-input formControlName="firstnameFormControl" required class="form-control"  type="text" ></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Last Name</ion-label>
+              <ion-input formControlName="lastnameFormControl" required class="form-control"  type="text"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Gender</ion-label>
+              <ion-select formControlName="genderFormControl" required class="form-control">
+                <ion-option value="Female">Female</ion-option>
+                <ion-option value="Male">Male</ion-option>
+              </ion-select>
+            </ion-item>
+          </div>
+        </form>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button class="button" [disabled]="!registerForm.valid" (click)="register()">Register</button>
+    </ion-col>
+  </ion-row>
+
+
+
+    <!-- <ion-list>
+
+      <ion-item>
+       
+      </ion-item>
+          
+      <ion-item>
+        <ion-label>Username / Email</ion-label>
+        <ion-input [(ngModel)]="username" type="email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>First Name</ion-label>
+        <ion-input [(ngModel)]="firstname" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Last Name</ion-label>
+        <ion-input [(ngModel)]="lastname" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select [(ngModel)]="gender">
+          <ion-option value="f">Female</ion-option>
+          <ion-option value="m">Male</ion-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+    
+    <button ion-button (click)="register()">Register</button> -->
+
+</ion-content>

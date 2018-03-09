@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Touch ID Agreement</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col>
+
+      <div>
+        <ion-item text-wrap>
+          Use Apple Touch ID or Face ID to sign on using your biometric instead of entering your username and password.
+          <br /><br />
+          We do not recommend using Touch ID or Face ID to sign on if you share your device.  When these features
+          are enabled, any person with a saved biometric registered on your device can sign on to the WhatsNearby app,
+          view your account information, and complete transactions.
+          <br /><br />
+          WhatsNearby does not store your Touch ID or Face ID biometric clientInformation.appCodeName
+          <br /><br />
+          By selecting Enable Sign On with Touch ID or Face ID, you acknowledge that you have read and 
+          understand the statement above.
+        </ion-item>
+      </div>
+
+      <div>
+        <ion-item>
+            <ion-label>Enable Sign On with Touch ID / Face ID</ion-label>
+            <ion-checkbox [(ngModel)]="isTouchIdAgree"></ion-checkbox>
+        </ion-item>
+      </div>
+
+      <div>
+          <button class="button" ion-button (click)="cancel()">CANCEL</button>
+          &nbsp;
+          <button class="button" ion-button (click)="save()" [disabled]="!isTouchIdAgree" >SAVE</button>
+      </div>
+      
+    </ion-col>
+  </ion-row>
+</ion-content>
