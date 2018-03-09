@@ -120,7 +120,6 @@ export class LoginPage implements OnInit {
 
       this.loaderService.dismissLoading();
       
-      //TODO: get user info by username
       this.navCtrl.push(TouchIdAgreementPage)
       let modal = this.modalCtrl.create(TouchIdAgreementPage);
       
